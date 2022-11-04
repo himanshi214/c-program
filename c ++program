@@ -1,0 +1,51 @@
+ #include<iostream>
+using namespace std;
+
+//FORWARD  DECLARATION
+  class one;
+  class two
+{
+    int a;
+      public:
+      void getdata(int x)
+      {
+          a=x;
+      }
+      friend void max(two,one);
+};
+
+class one
+{
+    int b;
+    public:
+    void getdata(int y)
+    {
+        b=y;
+    }
+    
+    friend void max(two,one);
+    
+};
+void max(two A,one B)
+{
+if(A.a>B.b)
+{
+    cout << "a is greater than b";
+}
+else{
+    cout <<"b is greater than a";
+    
+}
+
+}
+int main()
+{
+    one B;
+    two A;
+    B.getdata(4);
+    A.getdata(6);
+    max(A,B);
+    return 0;
+    
+}
+
